@@ -12,6 +12,13 @@ setup(
     long_desription=long_description,
     long_description_content_type='test/markdown',
     url='http://github.com/brahamirabah/pgbackup',
-    packages=find_packages('src')
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
+    install_requires=['boto3'],
+    entry_points={
+        'console_scripts': [
+            'pgbackup=pgbackup.cli:main',
+        ],
+    }
 )
 
